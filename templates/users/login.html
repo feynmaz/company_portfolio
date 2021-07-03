@@ -1,0 +1,23 @@
+  
+{% extends 'layout/base.html' %}
+{% load bootstrap4 %}
+
+
+{% block title %}
+    Вход
+{% endblock %}
+
+
+{% block content %}
+    <div class="card credentials_form">
+        <div class="card-body">
+            <h3>Вход</h3>
+            <form method="post">
+                {% csrf_token %}
+                {% bootstrap_form form layout='inline' %}
+                {% buttons submit='Войти' %} {% endbuttons %}
+            </form>
+            <p>Нет аккаунта? <a href="{% url 'users:register' %}">Зарегистрироваться</a></p>
+        </div>
+    </div>
+{% endblock %}

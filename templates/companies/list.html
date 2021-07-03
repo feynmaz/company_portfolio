@@ -1,0 +1,20 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}
+    Список компаний
+{% endblock %}
+
+{% block content %}
+    {% if object_list %}
+        {% for company in object_list %}
+            <div class="card company-preview">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{% url 'companies:detail' pk=company.pk  %}">{{ company.name }}</a>
+                    </h5>
+                    <p class="card-text">{{ company.content|truncatechars:20 }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

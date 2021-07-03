@@ -1,0 +1,22 @@
+.top-menu{
+    margin-left: 20px;
+}
+.company-preview{
+    margin: 20px 10px;
+}
+.navbar.main-menu{
+    background-color: rgb(0, 45, 178);
+
+}
+.main-menu-link{
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+.form-group{
+    padding: 15px 0;
+}
+.credentials_form{
+    padding: 10px 0;
+    width: 30rem;
+}
