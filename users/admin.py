@@ -20,3 +20,15 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 
 admin.site.register(UserProfile, UserProfileAdmin)
+
+
+
+class UserCompanyRelationshipAdmin(admin.ModelAdmin):
+    model = UserCompanyRelationship
+    list_display = ('company',)
+    fields = (
+        ('company', 'user',), 
+    )
+
+    
+admin.site.register(UserCompanyRelationship, UserCompanyRelationshipAdmin)

@@ -11,6 +11,9 @@ class Company(models.Model):
     assets = models.IntegerField(verbose_name='Активы (в млн. рублей)')
     type = models.CharField(max_length=20, choices=Type.choices, verbose_name='Тип')
 
+    def __str__(self) -> str:
+        return str(self.name) 
+
     class Meta:
         verbose_name = 'Компания'
         verbose_name_plural = 'Компании'

@@ -14,7 +14,7 @@
                 <div>Активы (в млн. рублей): <strong>{{ object.assets }}</strong></div>
                 <div>Тип: {{ object.type }}</div>
             </p>
-            {% if user.is_authenticated %}
+            {% if allow_update %}
                 <a href="{% url 'companies:update' pk=company.pk  %}" class="btn btn-primary ">Изменить</a>           
             {% endif %}
         </div>
