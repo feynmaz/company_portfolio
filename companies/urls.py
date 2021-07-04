@@ -15,6 +15,11 @@ urlpatterns = [
         route='<int:pk>/',
         view=CompaniesDetailView.as_view(),
         name='detail'
+    ),
+    path(
+        route='<int:pk>/update/',
+        view=CompanyUpdateView.as_view(),
+        name='update'
     )
 
 ]

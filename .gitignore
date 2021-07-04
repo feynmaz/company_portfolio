@@ -1,1 +1,3 @@
-/variables.py
+variables.py
+.vscode
+__pycache__
