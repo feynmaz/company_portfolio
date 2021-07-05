@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'rest_framework',
 
     'users.apps.UsersConfig',
     'companies.apps.CompaniesConfig',

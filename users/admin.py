@@ -18,6 +18,9 @@ class UserProfileAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('last_login', 'date_joined')
 
+    def has_add_permission(self, request, obj=None):
+        return False
+
 
 admin.site.register(UserProfile, UserProfileAdmin)
 
