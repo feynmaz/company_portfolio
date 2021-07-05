@@ -22,6 +22,6 @@
 
 Данные для входа:
 
-  admin: J4R5LpHYH - администратор
-	djangotestuser: ZDTD4xbkD - обычный пользователь
+* admin: J4R5LpHYH - администратор
+* djangotestuser: ZDTD4xbkD - обычный пользователь
   
