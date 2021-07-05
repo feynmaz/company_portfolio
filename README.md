@@ -24,4 +24,9 @@
 
 * admin: J4R5LpHYH - администратор
 * djangotestuser: ZDTD4xbkD - обычный пользователь
-  
+
+### API
+
+Доступные api url:
+* GET: /api/v1/companies/
+* GET и PUT для авторизованных: /api/v1/companies/<int:pk>/
