@@ -1,20 +1,40 @@
 {% extends 'layout/base.html' %}
 
 {% block title %}
-    Список компаний
+Список компаний
 {% endblock %}
 
 {% block content %}
-    {% if object_list %}
-        {% for company in object_list %}
-            <div class="card company-preview">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a href="{% url 'companies:detail' pk=company.pk  %}">{{ company.name }}</a>
-                    </h5>
-                    <p class="card-text">{{ company.content|truncatechars:20 }}</p>
-                </div>
-            </div>
-        {% endfor %}
-    {% endif %}
+{% if object_list %}
+{% for company in page_obj %}
+<div class="card company-preview">
+    <div class="card-body">
+        <h5 class="card-title">
+            <a href="{% url 'companies:detail' pk=company.pk  %}">{{ company.name }}</a>
+        </h5>
+        <p class="card-text">{{ company.content|truncatechars:20 }}</p>
+    </div>
+</div>
+{% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        
+        {% if page_obj.has_previous %}
+        <a href="?page=1" class="btn btn-outline-primary">&laquo; Первая</a>
+        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary">Предыдущая</a>
+        {% endif %}
+
+
+        <span class="current">
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+        </span>
+
+
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary">Следующая</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-primary">Последняя &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endif %}
 {% endblock %}

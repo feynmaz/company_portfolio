@@ -10,7 +10,9 @@ def detail_context_processor(request):
     company_pk = get_company_pk(request)
 
     if company_pk and request.user.pk:
-        if is_user_of_company(company_pk, request.user.pk):
+        if (request.user.is_staff 
+            or is_user_of_company(company_pk, request.user.pk)):
+            
             context['allow_update'] = True
             
     return context

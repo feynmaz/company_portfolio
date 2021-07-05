@@ -4,11 +4,13 @@ from django.views.generic.detail import DetailView
 from django.views.generic import UpdateView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+
 from companies.models import Company
 
 
 class CompaniesListView(ListView):
     model = Company
+    paginate_by = 5
     template_name = 'companies/list.html'
 
 
