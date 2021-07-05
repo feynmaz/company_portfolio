@@ -1,3 +1,5 @@
 from django.test import TestCase
 
-# Create your tests here.
+from users.models import UserCompanyRelationship, UserProfile
+from companies.models import Company
+

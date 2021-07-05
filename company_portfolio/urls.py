@@ -6,4 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('companies.urls')),
     path('users/', include('users.urls')),
+
+    path('grappelli/', include('grappelli.urls')), # grappelli URLS
 ]

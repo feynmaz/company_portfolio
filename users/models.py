@@ -11,9 +11,9 @@ class UserProfile(AbstractUser):
 
 
 class UserCompanyRelationship(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.CASCADE)
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name='Компания')
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name='Пользователь')
 
     class Meta:
-        verbose_name = 'Связь'
-        verbose_name_plural = 'Связи'
+        verbose_name = 'Доступ'
+        verbose_name_plural = 'Доступ'
