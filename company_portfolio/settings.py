@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = variables.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(variables.DEBUG))
 
 ALLOWED_HOSTS = variables.ALLOWED_HOSTS.split(' ')
 
