@@ -1,6 +1,4 @@
-from sre_constants import FAILURE
-from .models import *
-from users.models import *
+from users.models import UserCompanyRelationship
 import re
 
 

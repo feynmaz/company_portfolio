@@ -3,7 +3,7 @@ from rest_framework.generics import ListAPIView, get_object_or_404, RetrieveUpda
 from rest_framework.pagination import PageNumberPagination
 
 from companies.models import Company
-from .serializers import *
+from .serializers import CompanyListSerializer, CompanyDetailSerializer
 
 
 class CompanyListView(ListAPIView):

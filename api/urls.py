@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from .views import *
+from .views import CompanyDetailView, CompanyListView
 
 app_name = 'api'
 

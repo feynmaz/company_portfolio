@@ -1,19 +1,18 @@
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
-from .views import *
+from .views import CompanyListView, CompanyUpdateView, CompanyDetailView
 
 app_name = 'companies'
 
 urlpatterns = [
     path(
         route='',
-        view=CompaniesListView.as_view(),
+        view=CompanyListView.as_view(),
         name='list',
     ),
     path(
         route='<int:pk>/',
-        view=CompaniesDetailView.as_view(),
+        view=CompanyDetailView.as_view(),
         name='detail'
     ),
     path(
