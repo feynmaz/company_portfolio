@@ -14,7 +14,7 @@ class CompanyListView(ListAPIView):
 
 
 class CompanyDetailView(RetrieveUpdateAPIView):
-    authentication_classes = [IsAuthenticatedOrReadOnly,]
+    permission_classes = [IsAuthenticatedOrReadOnly,]
     serializer_class = CompanyDetailSerializer
   
     def get_queryset(self):
