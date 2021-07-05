@@ -1,6 +1,7 @@
 from django.db import models
 from rest_framework.generics import ListAPIView, get_object_or_404, RetrieveUpdateAPIView
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from companies.models import Company
 from .serializers import CompanyListSerializer, CompanyDetailSerializer
@@ -13,6 +14,7 @@ class CompanyListView(ListAPIView):
 
 
 class CompanyDetailView(RetrieveUpdateAPIView):
+    authentication_classes = [IsAuthenticatedOrReadOnly,]
     serializer_class = CompanyDetailSerializer
   
     def get_queryset(self):
